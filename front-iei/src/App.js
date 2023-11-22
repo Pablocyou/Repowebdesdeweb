@@ -21,10 +21,18 @@ function App() {
           value={location}
           onChange={(e) => setLocation(e.target.value)}
         />
+        <div> 
+          <input
+          type="text"
+          placeholder="Enter location name"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          />
+        </div>
         <div>
           <button onClick={handleSearch}>Search Location</button>
         </div>
-        
+
         <div className="result-box">
           {result && <p>{result}</p>}
         </div>
