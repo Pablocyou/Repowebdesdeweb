@@ -1,22 +1,33 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [location, setLocation] = useState('');
+  const [result, setResult] = useState('');
+
+  const handleSearch = () => {
+    // Implement the logic to search the location
+    // For now, we'll just display the entered location
+    setResult(`Results for "${location}"`);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"np
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>jijijaja 2</h1>
+        <input
+          type="text"
+          placeholder="Enter location name"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+        />
+        <div>
+          <button onClick={handleSearch}>Search Location</button>
+        </div>
+        
+        <div className="result-box">
+          {result && <p>{result}</p>}
+        </div>
       </header>
     </div>
   );
