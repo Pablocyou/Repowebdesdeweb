@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Jijijaja />} />
+          <Route index element={<Miranano />} />
           <Route path="jijijaja" element={<Jijijaja />} />
           <Route path="miranano" element={<Miranano />} />
           <Route path="*" element={<NotFound />} /> {/* Ensure NotFound is a defined component */}
