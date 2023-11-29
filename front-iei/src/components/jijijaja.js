@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './jijijaja.css';
 
-function App() {
+const Jijijaja = () => {
   const [location, setLocation] = useState('');
   const [result, setResult] = useState('');
 
   const handleSearch = () => {
     // Implement the logic to search the location
-    // For now, we'll just display the entered location
     setResult(`Results for "${location}"`);
   };
 
@@ -21,18 +20,9 @@ function App() {
           value={location}
           onChange={(e) => setLocation(e.target.value)}
         />
-        <div> 
-          <input
-          type="text"
-          placeholder="Enter location name"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          />
-        </div>
         <div>
           <button onClick={handleSearch}>Search Location</button>
         </div>
-
         <div className="result-box">
           {result && <p>{result}</p>}
         </div>
@@ -41,4 +31,4 @@ function App() {
   );
 }
 
-export default jijijaja;
+export default Jijijaja;
