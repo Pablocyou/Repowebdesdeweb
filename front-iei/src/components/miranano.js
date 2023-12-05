@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './miranano.css';
+import {Row, Col} from 'react-bootstrap';
 
 const Miranano = () => {
   const [location, setLocation] = useState('');
@@ -18,13 +19,13 @@ const Miranano = () => {
   return (
     <div className="miranano">
       <header className="App-header">
-        <h1>Mira nano, yo no se para que pollas tenemos este grupo</h1>
+        <h1>Buscador de centros educativos</h1>
         <div>
             <label htmlFor="locality">Localidad:</label>
             <input
                 type="text"
                 id='location'
-                placeholder="explicamelo tontin"
+                placeholder="añadir localidad"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}/>
         </div>
@@ -33,7 +34,7 @@ const Miranano = () => {
             <input
                 type="text"
                 id='postalCode'
-                placeholder="codificame esta"
+                placeholder="añadir cod. postal"
                 value={postalCode}
                 onChange={(e) => setPostalCode(e.target.value)}/>
         </div>
@@ -42,7 +43,7 @@ const Miranano = () => {
             <input
                 type="text"
                 id='province'
-                placeholder="Que provincia"
+                placeholder="añadir provincia"
                 value={province}
                 onChange={(e) => setProvince(e.target.value)}/>
         </div>
@@ -57,7 +58,9 @@ const Miranano = () => {
         </div>
         
         <div>
-          <button onClick={handleSearch}>Search Location</button>
+          <button className="boton-cancelar" onClick={handleSearch}>Cancelar</button>
+
+          <button className="boton-buscar" onClick={handleSearch}>Buscar</button>
         </div>
         <div className="result-box">
           {result && <p>{result}</p>}
